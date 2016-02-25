@@ -1,0 +1,53 @@
+// main: main.less
+
+.author-page {
+	.article-title {
+		font-size:3rem;
+		font-family:@fontfam-longread;
+		margin-bottom:1rem;
+		border-bottom:1px solid #eee;
+		padding-bottom:1rem;
+		font-weight:normal;
+		text-align:center;
+		@media only screen and (min-width: 600px) {
+			text-align:left;
+		}
+		.subtitle {
+			font-size:1.25rem;
+		}
+	}
+	.userphoto {
+		img {
+			width:100%;
+			height:auto;
+			max-width:100%;
+			padding:1px;
+			border:1px solid #ccc;
+		}
+		@media only screen and (min-width: 600px) {
+			float:right;
+			padding-left:1rem;
+			padding-bottom:1rem;
+			background:#fefefe;
+			img {
+				max-height:250px;
+				width:auto;
+			}
+		}
+	}
+	.profile {
+		.website {
+			margin-bottom: 2rem;
+		}
+		.bio {
+			margin-bottom: 2rem;
+			font-size:.85rem;
+			&.short {
+				font-size:.8rem;
+			}
+			&.long {
+				font-family:@fontfam-longread;
+			}
+		}
+	}
+}
