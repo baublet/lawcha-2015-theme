@@ -9,6 +9,7 @@ It is meant to be used with baublet/wp-twig-loop-shortcode and not as a drop-in 
 - YARPP (yet another related posts plugin) -- not required, but it's incorporated in here
 - Advanced Custom Posts
 - Uses custom thumbnail sizes and post types
+- Custom Icomoon fonts -- for fast rendering. If you use this theme, use your own here!
 
 # Todo
 
