@@ -1,0 +1,229 @@
+// main: main.less
+
+@bg-color-1: #EB3349;
+@bg-color-2: #F45C43;
+
+.seattle-conference .header-nav .sub-menu {background:#555;}
+.seattle-conference .header-nav li a {
+  color:fade(#fff, 50%);
+  &:hover {
+    color: #fff;
+  }
+}
+
+.seattle-conference .page-wrapper {
+  padding: 0;
+  background: #fff;
+}
+
+.seattle-conference .entry-title {display:none;}
+
+.seattle-conference .header {
+  width: 100%;
+  max-width: none;
+  background: @bg-color-1;
+  background: linear-gradient(25deg, @bg-color-1, @bg-color-2);
+  height: 75vh;
+  min-height: 420px;
+  max-height: 800px;
+  position: relative;
+  color: #fff;
+  padding-top: 2rem;
+  &:after {
+    display: block;
+    content: " ";
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+    background: url("images/seatle-skyline-compressor.svg") bottom center repeat-x;
+  }
+  .header-nav #nav-toggle~#nav-toggle-label {
+    background: @bg-color-1;
+    border: none;
+    box-shadow: inset 0 0 15px 0 fade(#000, 15%);
+    margin: 0 1rem;
+    border-radius: 5px;
+  }
+  .brand {
+    background: transparent;
+  }
+  .brand:before {
+    display: none;
+  }
+  .brand h1 a {
+    opacity: .75;
+    transition: opacity .25s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .inside-wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    height: 75vh;
+    min-height: 420px;
+    max-height: 800px;
+  }
+  .conference-info {
+    z-index: 20;
+    position:absolute;
+    right:1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    right: 1rem;
+    text-align: center;
+    .short-descriptor {
+      font-size: .5rem;
+      background: @bg-color-1;
+      padding: .5rem;
+      border-radius: 3px;
+      box-shadow: 2px 2px 5px 0 fade(#000, 10%);
+      display: inline-block;
+      margin: 0 auto 0;
+      transform: translateX(-5rem);
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 1px #000,
+                   2px 2px 5px fade(#000, 45%);
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      span {
+        display: block;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 100;
+        margin-top: -.5rem;
+        opacity:.8;
+        text-shadow: none;
+      }
+    }
+    .date, .location {
+      font-size: .6rem;
+    }
+    .date {
+      margin-top: 2rem;
+      opacity: .75;
+      text-align: right;
+    }
+    .location {
+      opacity: .5;
+      text-align: right;
+      .city, .place {
+        display: block;
+      }
+    }
+  }
+  @media only screen and (max-width: 460px) {
+    .header-nav #nav-toggle:checked~#nav-toggle-label {color:#fff;}
+    .header-nav #nav-toggle:checked~#nav-toggle-label~.menu-new-menu-container {
+      background: @bg-color-1;
+      margin: 0 1.25rem;
+      box-shadow: 0 2px 5px 0 fade(#000, 15%);
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.seattle-conference .conference-nav {
+  font-size: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  .conference-nav-link  {
+    font-size: 1rem;
+    display: inline-block;
+    max-width: 300px;
+    min-width: 250px;
+    width: 25%;
+    position: relative;
+    padding-top: 175px;
+    margin: 0 .5rem;
+    text-decoration: none;
+    color: #666;
+    vertical-align: top;
+  }
+  .link-image {
+    position: absolute;
+    max-width: 100%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    top: 0;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    left:50%;
+    transform: translateX(-50%);
+    opacity: .9;
+    transition: border-radius .5s cubic-bezier(0,.82,0,.99),
+                opacity .5s cubic-bezier(0,.82,0,.99),
+                border-color .25s ease-in-out;
+  }
+  .conference-nav-link:hover .link-image {
+    border-radius: 0;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    opacity: 1;
+    box-shadow: -5px -5px 0 0 @bg-color-1;
+    -webkit-filter: grayscale(0%);
+     filter: grayscale(0%);
+  }
+  .link-text {
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: transform 1s cubic-bezier(0,.82,0,.99);
+    .subtitle {
+      display: block;
+      opacity: .75;
+      font-weight: 100;
+      font-size: .8rem;
+    }
+  }
+  .conference-nav-link:hover .link-text {
+    transform: translateY(-10px);
+    color: #111;
+  }
+  .conference-nav-link.disabled {
+    opacity: .5;
+    cursor: default;
+  }
+}
+
+.seattle-conference .people {
+  float: right;
+  border-radius: 3px;
+  background: linear-gradient(25deg, @bg-color-1, @bg-color-2);
+  color: #fff;
+  padding: 1rem;
+  margin-left: 1rem;
+  max-width: 35%;
+  h2 {
+    font-size: 1rem;
+  }
+  ul {
+    margin: 0;
+    padding-left: 1rem;
+  }
+  li {
+    font-size: .7rem;
+    + li {
+      margin-top: .5rem;
+    }
+  }
+  @media only screen and (max-width: 641px) {
+    width: 100%;
+    float: none;
+    margin: 0 0 2rem;
+    max-width: none;
+  }
+}
