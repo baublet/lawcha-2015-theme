@@ -29,6 +29,19 @@
   position: relative;
   color: #fff;
   padding-top: 2rem;
+  &:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    bottom: 3%;
+    right: -5%;
+    background: url("images/mt-rainier.svg") bottom center no-repeat;
+    opacity: .25;
+    background-size: contain;
+    z-index: 9;
+    width: 600px;
+    height: 162px;
+  }
   &:after {
     display: block;
     content: " ";
@@ -109,10 +122,11 @@
     .title {
       font-size: 6vw;
       font-weight: 900;
-      //text-shadow: 1px 1px 1px #000,
-      //             2px 2px 5px fade(#000, 45%);
       text-shadow: 3px 3px 0 @bg-color-1,
                    3px 3px 5px fade(#000, 45%);
+      @media only screen and (max-width: 460px) {
+        font-size: 9vw;
+      }
       a {
         color: #fff;
         text-decoration: none;
@@ -125,10 +139,18 @@
         margin-top: -.5rem;
         opacity:.8;
         text-shadow: none;
+        @media only screen and (max-width: 460px) {
+          font-size: 3vw;
+        }
       }
     }
     .date, .location {
       font-size: .6rem;
+      display:inline-block;
+      float: right;
+      clear: right;
+      background: @bg-color-1;
+      padding: .3rem;
     }
     .date {
       margin-top: 2rem;
