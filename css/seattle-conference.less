@@ -40,6 +40,9 @@
     z-index: 10;
     background: url("images/seatle-skyline-compressor.svg") bottom center repeat-x;
   }
+  .header-nav {
+    padding-top: 0;
+  }
   .header-nav #nav-toggle~#nav-toggle-label {
     background: @bg-color-1;
     border: none;
@@ -56,6 +59,8 @@
   .brand h1 a {
     opacity: .75;
     transition: opacity .25s ease-in-out;
+    height: 50px;
+    width: 162.5px;
     &:hover {
       opacity: 1;
     }
@@ -79,26 +84,42 @@
     text-align: center;
     .short-descriptor {
       font-size: .5rem;
-      background: @bg-color-1;
+      //color: fade(white, 50%);
       padding: .5rem;
-      border-radius: 3px;
-      box-shadow: 2px 2px 5px 0 fade(#000, 10%);
       display: inline-block;
       margin: 0 auto 0;
-      transform: translateX(-5rem);
+      position: relative;
+      &:after, &:before {
+        content: " ";
+        display: block;
+        max-height: 1px;
+        line-height: 0;
+        height: 1px;
+        background: fade(white, 25%);
+        width: 100%;
+        position: absolute;
+        left: -100%;
+        top: 50%;
+      }
+      &:after {
+        left: auto;
+        right: -100%;
+      }
     }
     .title {
-      font-size: 2rem;
+      font-size: 6vw;
       font-weight: 900;
-      text-shadow: 1px 1px 1px #000,
-                   2px 2px 5px fade(#000, 45%);
+      //text-shadow: 1px 1px 1px #000,
+      //             2px 2px 5px fade(#000, 45%);
+      text-shadow: 3px 3px 0 @bg-color-1,
+                   3px 3px 5px fade(#000, 45%);
       a {
         color: #fff;
         text-decoration: none;
       }
       span {
         display: block;
-        font-size: 1.2rem;
+        font-size: 1.75vw;
         text-transform: uppercase;
         font-weight: 100;
         margin-top: -.5rem;
@@ -207,6 +228,9 @@
   padding: 1rem;
   margin-left: 1rem;
   max-width: 35%;
+  small {
+    display: block;
+  }
   h2 {
     font-size: 1rem;
   }

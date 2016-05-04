@@ -14,7 +14,7 @@ remove_filter('the_content', 'wpautop'); ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?uncache=12351512" media="screen" />
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700|Merriweather:400,400italic,700,700italic|Bitter:400,400italic,700' rel='stylesheet' type='text/css'>
 
 <script>
@@ -56,7 +56,7 @@ remove_filter('the_content', 'wpautop'); ?>
         <h2 class="title">
           <a href="/wordpress/seattle-washington-2017/">
             Scales of Struggle
-            <span>Local, Regional, and Global</span>
+            <span>Communities, Movements, and Global Connections</span>
           </a>
         </h2>
         <div class="date">June 23-25, 2017</div>
