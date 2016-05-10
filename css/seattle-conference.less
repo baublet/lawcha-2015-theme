@@ -24,8 +24,8 @@
   background: @bg-color-1;
   background: linear-gradient(25deg, @bg-color-1, @bg-color-2);
   height: 75vh;
-  min-height: 420px;
-  max-height: 800px;
+  min-height: 350px;
+  max-height: 700px;
   position: relative;
   color: #fff;
   padding-top: 2rem;
@@ -37,11 +37,11 @@
     bottom: 3%;
     right: -5%;
     background: url("images/mt-rainier.svg") bottom center no-repeat;
-    opacity: .25;
+    opacity: .75;
     background-size: contain;
     z-index: 9;
-    width: 600px;
-    height: 162px;
+    width: 720px;
+    height: 195px;
   }
   &:after {
     display: block;
@@ -91,13 +91,13 @@
     z-index: 20;
     position:absolute;
     right:1rem;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     left: 1rem;
     right: 1rem;
     text-align: center;
     .short-descriptor {
-      font-size: .5rem;
+      font-size: .75rem;
       //color: fade(white, 50%);
       padding: .5rem;
       display: inline-block;
@@ -124,20 +124,21 @@
       font-size: 6vw;
       font-weight: 900;
       text-shadow: 3px 3px 0 @bg-color-1,
-                   3px 3px 5px fade(#000, 45%);
+                   5px 7px 0 fade(#000, 25%);
       @media only screen and (max-width: 460px) {
         font-size: 9vw;
       }
       a {
         color: #fff;
         text-decoration: none;
+        white-space: nowrap;
       }
       span {
         display: block;
         font-size: 1.75vw;
         text-transform: uppercase;
         font-weight: 100;
-        margin-top: -.5rem;
+        margin-top: -.25rem;
         opacity:.8;
         text-shadow: none;
         @media only screen and (max-width: 460px) {
@@ -146,21 +147,18 @@
       }
     }
     .date, .location {
+      margin-top: 2rem;
+      vertical-align: top;
+      text-align: left;
       font-size: .6rem;
       display:inline-block;
-      float: right;
-      clear: right;
-      background: @bg-color-1;
-      padding: .3rem;
+      font-weight: bold;
+      opacity: .75;
     }
     .date {
-      margin-top: 2rem;
-      opacity: .75;
-      text-align: right;
+      margin-right: 1rem;
     }
     .location {
-      opacity: .5;
-      text-align: right;
       .city, .place {
         display: block;
       }
@@ -230,7 +228,7 @@
       display: block;
       opacity: .75;
       font-weight: 100;
-      font-size: .8rem;
+      font-size: .6rem;
     }
   }
   .conference-nav-link:hover .link-text {
