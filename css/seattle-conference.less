@@ -121,6 +121,8 @@
         color: #fff;
         text-decoration: none;
         white-space: nowrap;
+        position: relative;
+        z-index: 200;
       }
       span {
         display: block;
@@ -227,6 +229,14 @@
   .conference-nav-link.disabled {
     opacity: .5;
     cursor: default;
+  }
+}
+
+.seattle-conference {
+  .entry-content p, .entry-content li {
+    font-family: @fontfam-longread;
+    font-size: .8rem;
+    line-height: 0.8rem * 1.6;
   }
 }
 

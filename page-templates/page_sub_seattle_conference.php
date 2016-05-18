@@ -1,11 +1,9 @@
 <?php
-/* Template Name: Seattle Conference Template */
+/* Template Name: Seattle Conference Stub Template */
 /**
  * The template for displaying pages
  */
-
-// Turns off AutoP for these pages
-remove_filter('the_content', 'wpautop'); ?>
+?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -31,7 +29,7 @@ remove_filter('the_content', 'wpautop'); ?>
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class("seattle-conference"); ?>>
+<body <?php body_class("seattle-conference seattle-conference-stub"); ?>>
 <div class="page-wrapper hfeed">
   <a class="skip-link screen-reader-text" href="#content"><?php echo 'Skip to content'; ?></a>
 
