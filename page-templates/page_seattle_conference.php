@@ -4,9 +4,6 @@
  * The template for displaying pages
  */
 
-// Turns off AutoP for these pages
-remove_filter('the_content', 'wpautop'); ?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
