@@ -50,18 +50,12 @@
       </div>
 
       <div class="conference-info">
-        <div class="short-descriptor">2017 LAWCHA Conference</div>
         <h2 class="title">
           <a href="/wordpress/seattle-washington-2017/">
             Scales of Struggle
             <span>Communities, Movements, and Global Connections</span>
           </a>
         </h2>
-        <div class="date">June 23-25, 2017</div>
-        <div class="location">
-          <span class="city">Seattle, Washington</span>
-          <span class="place">University of Washington</span>
-        </div>
       </div>
 
     </div>
