@@ -76,6 +76,7 @@ hr{
 /* General page structure */
 
 .page-wrapper {
+  overflow-x: hidden;
   padding: 100px 50px 0;
   margin: 0 auto;
   background-size: contain;
@@ -763,9 +764,25 @@ hr{
   &.alignright {
     float:right;
     margin-left:1rem;
+    clear: right;
   }
   &.alignleft {
     float:left;
     margin-right:1rem;
+    clear: left;
+  }
+  &.repost {
+    background: @color-secondary;
+    color: #fcfcfc;
+    font-size: .7rem;
+    .stitched(rgba(255,255,255,.5));
+    a {
+      color: #fcfcfc;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
   }
 }
