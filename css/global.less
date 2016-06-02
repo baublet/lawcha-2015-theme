@@ -32,6 +32,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   font-family: @fontfam-legibility;
   font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1em;
   a {
     text-decoration: none;
   }
@@ -382,7 +384,10 @@ hr{
   =========================================================================
   =========================================================================
   ========================================================================= */
-
+.type .banner + .post .entry-content p {
+  margin-left: auto;
+  margin-right: auto;
+}
 .type {
   h1.entry-title{
     font-family: @fontfam-longread;
@@ -399,6 +404,7 @@ hr{
       }
     }
     p {
+      max-width: 720px;
       .longread();
       margin:0 0 1rem;
       + p {
