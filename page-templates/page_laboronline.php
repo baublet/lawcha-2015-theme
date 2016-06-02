@@ -3,7 +3,7 @@
 
  // Turns off AutoP for these pages
 remove_filter('the_content', 'wpautop');
-wp_enqueue_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js', array(), '1.0.0', true );
+wp_enqueue_script('masonry', 'https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js', array(), '1.0.0', true );
 
 get_header(); ?>
 
@@ -32,7 +32,8 @@ get_header(); ?>
             itemSelector: '.an-author-box',
             columnWidth: 64,
             gutter: 12,
-            isFitWidth: true,
+            fitWidth: true,
+            resize: false,
             transitionDuration: '0.2s'
         });
     };
