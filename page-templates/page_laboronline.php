@@ -26,16 +26,16 @@ get_header(); ?>
 
   <script>
     window.onload = function() {
-        var elem = document.querySelector('#authors-grid');
-        var msnry = new Masonry( elem, {
-            // options
-            itemSelector: '.an-author-box',
-            columnWidth: 64,
-            gutter: 12,
-            fitWidth: true,
-            resize: false,
-            transitionDuration: '0.2s'
-        });
+      var msnry = new Masonry('#authors-grid', {
+          // options
+          itemSelector: '.an-author-box',
+          columnWidth: 32,
+          gutter: 5,
+          fitWidth: true,
+          percentPosition: true,
+          resize: false,
+          transitionDuration: '0.2s'
+      });
     };
   </script>
 
