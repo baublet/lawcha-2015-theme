@@ -32,7 +32,7 @@ get_header(); ?>
         var msnry = new Masonry(author_grid, {
             // options
             itemSelector: '.an-author-box',
-            columnWidth: 32,
+            columnWidth: 30,
             gutter: 5,
             fitWidth: true,
             percentPosition: true,
