@@ -26,19 +26,21 @@ get_header(); ?>
   </div><!-- .content-area -->
 
   <script>
-    var author_grid = document.querySelector('#authors-grid')
-    imagesLoaded(author_grid, function(instance) {
-      var msnry = new Masonry(author_grid, {
-          // options
-          itemSelector: '.an-author-box',
-          columnWidth: 32,
-          gutter: 5,
-          fitWidth: true,
-          percentPosition: true,
-          resize: false,
-          transitionDuration: '0.2s'
+    window.onload = function() {
+      var author_grid = document.querySelector('#authors-grid')
+      imagesLoaded(author_grid, function(instance) {
+        var msnry = new Masonry(author_grid, {
+            // options
+            itemSelector: '.an-author-box',
+            columnWidth: 32,
+            gutter: 5,
+            fitWidth: true,
+            percentPosition: true,
+            resize: false,
+            transitionDuration: '0.2s'
+        });
       });
-    });
+    };
   </script>
 
 <?php get_footer(); ?>
