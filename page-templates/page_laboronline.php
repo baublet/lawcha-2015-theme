@@ -4,7 +4,7 @@
  // Turns off AutoP for these pages
 remove_filter('the_content', 'wpautop');
 wp_enqueue_script('masonry', 'https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js', array(), '1.0.0', true );
-wp_enqueue_script('imagesloaded', 'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js', array(), '1.0.0', true );
+wp_enqueue_script('imagesloaded', 'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js', array(), '', true );
 
 get_header(); ?>
 
