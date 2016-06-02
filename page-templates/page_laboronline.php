@@ -4,6 +4,7 @@
  // Turns off AutoP for these pages
 remove_filter('the_content', 'wpautop');
 wp_enqueue_script('masonry', 'https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js', array(), '1.0.0', true );
+wp_enqueue_script('imagesloaded', 'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js', array(), '1.0.0', true );
 
 get_header(); ?>
 
@@ -25,8 +26,9 @@ get_header(); ?>
   </div><!-- .content-area -->
 
   <script>
-    window.onload = function() {
-      var msnry = new Masonry('#authors-grid', {
+    var author_grid = document.querySelector('#authors-grid')
+    imagesLoaded(author_grid, function(instance) {
+      var msnry = new Masonry(author_grid, {
           // options
           itemSelector: '.an-author-box',
           columnWidth: 32,
@@ -36,7 +38,7 @@ get_header(); ?>
           resize: false,
           transitionDuration: '0.2s'
       });
-    };
+    });
   </script>
 
 <?php get_footer(); ?>
