@@ -93,13 +93,12 @@ if(post_is_in_descendant_category(25)):?>
     <?php /* Our custom verbiage for our Working-Class Perspectives cross-posts */
     if(has_tag("working-class-perspectives")): ?>
       <aside class="alignright repost">
-        <em>This post was originally featured in the blog run by the
-        <a href="http://lwp.georgetown.edu/">Kalmanovitz Initiative for Labor
-        and the Working Poor at Georgetown University</a>,
+        <em>This post was originally featured in
         </em><strong><a href="https://workingclassstudies.wordpress.com/">Working-Class
         Perspectives: Commentary on Working-Class Culture, Education, and
-        Politics</a></strong><em>. It has been reposted here with permission
-        from the source.</em>
+        Politics</a></strong><em>, affiliated with the
+        <a href="http://lwp.georgetown.edu/">Kalmanovitz Initiative for Labor
+        and the Working Poor at Georgetown University</a>.</em>
       </aside>
     <?php endif; ?>
 
