@@ -398,10 +398,14 @@ hr{
     border-bottom:1px solid #eee;
   }
   .entry-content {
-    h {
-      &2,&3,&4,&5,&6 {
-        margin:1rem 0;
-      }
+    h2, h3, h4, h5, h6 {
+      margin:1rem auto;
+      max-width: 720px;
+    }
+    ul, ol {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 720px;
     }
     p {
       max-width: 720px;
@@ -422,10 +426,11 @@ hr{
       }
     }
     blockquote {
-      margin:1rem 1.5rem;
+      margin:1rem auto;
       font-size:.75rem;
       font-family:@fontfam-legibility;
       opacity:.95;
+      max-width: 680px;
       /* This prevents flicker on Chrome when a blockquote has float that overlaps it. */
       overflow:hidden;
       &:hover{
@@ -442,7 +447,6 @@ hr{
     }
     ul, ol {
       list-style-type:disc;
-      margin:0 0 1rem;
       .longread();
       li {
           margin:1rem 0 1rem 1.5rem;
