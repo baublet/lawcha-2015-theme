@@ -151,7 +151,48 @@ function disable_junk() {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 
 	wp_dequeue_style('yarppWidgetCss');
-
 	wp_dequeue_script('jquery');
 }
 add_action( 'init', 'disable_junk', 99 );
+
+/**
+ * Wrapper for wp_head() which manages SSL
+ *
+ * @uses	wp_head()
+ * @param	bool	$ssl
+ * @return	void
+ */
+function lawcha_wp_head() {
+	// Capture wp_head output with buffering
+	ob_start();
+	wp_head();
+	$wp_head = ob_get_contents();
+	ob_end_clean();
+
+	// Replace plain protocols with relative protocols
+	$wp_head = str_replace("http://", "//", $wp_head);
+
+	// Output
+	echo $wp_head;
+}
+
+/**
+ * Wrapper for wp_footer() which manages SSL
+ *
+ * @uses	wp_footer()
+ * @param	bool	$ssl
+ * @return	void
+ */
+function lawcha_wp_footer() {
+	// Capture wp_head output with buffering
+	ob_start();
+	wp_footer();
+	$wp_footer = ob_get_contents();
+	ob_end_clean();
+
+	// Replace plain protocols with relative protocols
+	$wp_footer = str_replace("http://", "//", $wp_footer);
+
+	// Output
+	echo $wp_footer;
+}

@@ -31,7 +31,7 @@
 
 </div><!-- .page -->
 
-<?php wp_footer(); ?>
+<?php lawcha_wp_footer(); ?>
 
 </body>
 </html>
