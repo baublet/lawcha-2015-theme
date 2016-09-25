@@ -1,0 +1,86 @@
+// main: main.less
+
+/*	Typography for long-form content
+  =========================================================================
+  =========================================================================
+  ========================================================================= */
+.type .banner + .entry-content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.type {
+  h1.entry-title{
+    font-family: @fontfam-longread;
+    font-weight: normal;
+    font-size:2.5rem;
+    margin:0 0 .5rem;
+    padding-bottom: .5rem;
+    border-bottom:1px solid #eee;
+  }
+  .entry-content {
+    h {
+      &2,&3,&4,&5,&6 {
+        margin:1rem auto;
+        max-width: 720px;
+      }
+    }
+    p {
+      max-width: 720px;
+      .longread();
+      margin:0 0 1rem;
+      + p {
+        margin:1rem 0 1rem;
+      }
+      a.footnote{
+        position:relative;
+        font-size:.5rem;
+        top:-.5rem;
+        text-decoration:none;
+        font-family: @fontfam-legibility;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    blockquote {
+      margin:1rem auto;
+      padding: 0 1.5rem;
+      font-size:.75rem;
+      font-family:@fontfam-legibility;
+      opacity:.95;
+      max-width: 720px;
+      /* This prevents flicker on Chrome when a blockquote has float that overlaps it. */
+      overflow:hidden;
+      &:hover{
+        opacity: 1;
+      }
+      p {
+        font-size:.75rem;
+        font-family:@fontfam-legibility;
+      }
+    }
+    h5 {
+      font-size:.7rem;
+      text-transform:uppercase;
+    }
+    ul, ol {
+      list-style-type:disc;
+      margin:0 auto 1rem;
+      max-width: 720px;
+      .longread();
+      li {
+          margin:1rem 0 1rem 1.5rem;
+      }
+    }
+    ol {
+      list-style-type:decimal;
+    }
+  }
+  &.long {
+    .attract-text p {
+      font-size: 1.2rem;
+      font-family: @fontfam-legibility;
+      font-weight:300;
+    }
+  }
+}
