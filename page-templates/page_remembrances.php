@@ -6,7 +6,7 @@
  
 // Turns off AutoP for these pages
 remove_filter('the_content', 'wpautop');
-wp_enqueue_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js', array(), '1.0.0', true );
+wp_enqueue_script('masonry', '//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js', array(), '1.0.0', true );
 
 get_header(); ?>
 
