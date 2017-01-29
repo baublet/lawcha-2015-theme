@@ -59,7 +59,7 @@ remove_filter('the_content', 'wpautop'); ?>
             <span>Communities, Movements, and Global Connections</span>
           </a>
         </h2>
-        <div class="date">June 23-25, 2017</div>
+        <div class="date">June 22-25, 2017</div>
         <div class="location">
           <span class="city">Seattle, Washington</span>
           <span class="place">University of Washington</span>
