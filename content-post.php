@@ -126,22 +126,14 @@ if(post_is_in_descendant_category(25)):?>
   </div><!-- .entry-content -->
 
   <?php // Load the social media necessities
-  $url = 'http';
-  if ($_SERVER["HTTPS"] == "on") {
-    $url .= "s";
-  }
-  $url .= "://";
-  if ($_SERVER["SERVER_PORT"] != "80") {
-    $url .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-  } else {
-    $url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-  }
-  $url = urlencode($url);	?>
+    $url = get_site_url() . $_SERVER["REQUEST_URI"];
+    $url = urlencode($url);
+  ?>
   <div class="social">
     <a href="http://www.facebook.com/sharer.php?u=<?=$url?>" class="icon-facebook"><span>Share on Facebook</span></a>
     <a href="http://twitter.com/share?url=<?=$url?>" class="icon-twitter"><span>Share on Twitter</span></a>
     <a href="https://plus.google.com/share?url=<?=$url?>" class="icon-google-plus"><span>Share on Google+</span></a>
-    <a href="http://www.linkedin.com/shareArticle?mini=true&url={articleUrl}<?=$url?>" class="icon-linkedin"><span>Share on LinkedIn</span></a>
+    <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?=$url?>" class="icon-linkedin"><span>Share on LinkedIn</span></a>
     <a href="http://www.reddit.com/submit?url=<?=$url?>" class="icon-reddit"><span>Share on Reddit</span></a>
     <a href="http://pinterest.com/pin/create/button/?url=<?=$url?>" class="icon-pinterest"><span>Pin This</span></a>
     <a href="mailto:?subject=Check+out+this+article+at+LAWCHA.com&body=Hey!+Check+out+this+great+article+at+the+Labor+and+Working-Class+History+Association:+<?=$url?>" class="icon-mail"><span>Share over Email</span></a>
