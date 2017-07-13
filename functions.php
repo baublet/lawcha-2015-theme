@@ -84,11 +84,7 @@ function lawcha_usermeta_form_field_affiliation($user)
                 <label for="birthday">Affiliation</label>
             </th>
             <td>
-                <input type="text"
-                       class="regular-text ltr"
-                       id="affiliation"
-                       name="affiliation"
-                       value="<?= esc_attr(get_user_meta($user->ID, 'affiliation', true)); ?>">
+		<textarea rows="5" cols="30" id=affiliation" name="affiliation"><?= esc_attr(get_user_meta($user->ID, 'affiliation', true)); ?></textarea>
             </td>
         </tr>
     </table>
