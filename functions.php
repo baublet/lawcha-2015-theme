@@ -66,6 +66,80 @@ function lawcha_setup() {
 add_action('after_setup_theme', 'lawcha_setup');
 endif;
 
+/**
+ * Setup custom user profile meta fields
+ */
+<?php
+/**
+ * The field on the editing screens.
+ *
+ * @param $user WP_User user object
+ */
+function lawcha_usermeta_form_field_affiliation($user)
+{
+    ?>
+    <table class="form-table">
+        <tr>
+            <th>
+                <label for="birthday">Affiliation</label>
+            </th>
+            <td>
+                <input type="text"
+                       class="regular-text ltr"
+                       id="affiliation"
+                       name="affiliation"
+                       value="<?= esc_attr(get_user_meta($user->ID, 'affiliation', true)); ?>">
+            </td>
+        </tr>
+    </table>
+    <?php
+}
+ 
+/**
+ * The save action.
+ *
+ * @param $user_id int the ID of the current user.
+ *
+ * @return bool Meta ID if the key didn't exist, true on successful update, false on failure.
+ */
+function lawcha_usermeta_form_field_affiliation_update($user_id)
+{
+    // check that the current user have the capability to edit the $user_id
+    if (!current_user_can('edit_user', $user_id)) {
+        return false;
+    }
+ 
+    // create/update user meta for the $user_id
+    return update_user_meta(
+        $user_id,
+        'affiliation',
+        $_POST['affiliation']
+    );
+}
+ 
+add_action(
+    'edit_user_profile',
+    'lawcha_usermeta_form_field_affiliation'
+);
+ 
+// add the field to user profile editing screen
+add_action(
+    'show_user_profile',
+    'lawcha_usermeta_form_field_affiliation'
+);
+ 
+// add the save action to user's own profile editing screen update
+add_action(
+    'personal_options_update',
+    'lawcha_usermeta_form_field_affiliation_update'
+);
+ 
+// add the save action to user profile editing screen update
+add_action(
+    'edit_user_profile_update',
+    'lawcha_usermeta_form_field_affiliation_update'
+);
+
 if (!function_exists('lawcha_widgets_init')):
 /**
  * Register widget area.
