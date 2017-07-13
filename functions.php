@@ -69,7 +69,7 @@ endif;
 /**
  * Setup custom user profile meta fields
  */
-<?php
+
 /**
  * The field on the editing screens.
  *
