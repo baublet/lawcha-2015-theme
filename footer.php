@@ -4,7 +4,7 @@
 	<div class="social-media">
 		<div class="twitter">
 			<h2><a href=""><span class="icon-twitter"></span> Twitter</a></h2>
-			<p><span>Follow us on Twitter</span> <a href="">@LAWCHA_ORG</a> or <a href="">@LaborOnline</a> to take part in the discussion.</p>
+			<p><span>Follow us on Twitter</span> <a href="https://twitter.com/lawcha_org">@LAWCHA_ORG</a> or <a href="https://twitter.com/laboronline">@LaborOnline</a> to take part in the discussion.</p>
 		</div>
 		<div class="facebook">
 			<h2><a href=""><span class="icon-facebook"></span> Facebook</a></h2>
