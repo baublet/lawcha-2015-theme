@@ -3,11 +3,11 @@
 <footer id="colophon" role="contentinfo" class="footer">
 	<div class="social-media">
 		<div class="twitter">
-			<h2><a href=""><span class="icon-twitter"></span> Twitter</a></h2>
+			<h2><a href="https://twitter.com/lawcha_org"><span class="icon-twitter"></span> Twitter</a></h2>
 			<p><span>Follow us on Twitter</span> <a href="https://twitter.com/lawcha_org">@LAWCHA_ORG</a> or <a href="https://twitter.com/laboronline">@LaborOnline</a> to take part in the discussion.</p>
 		</div>
 		<div class="facebook">
-			<h2><a href=""><span class="icon-facebook"></span> Facebook</a></h2>
+			<h2><a href="https://www.facebook.com/laborandworkingclasshistory"><span class="icon-facebook"></span> Facebook</a></h2>
 			<p><span>Follow us on</span> <a href="https://www.facebook.com/laborandworkingclasshistory">Facebook page</a> to receive the latest updates. Don't forget to like us!</p>
 		</div>
 		<div class="news-categories">
