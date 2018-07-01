@@ -232,7 +232,8 @@
 .durham-conference .people {
   float: right;
   border-radius: 3px;
-  background: linear-gradient(25deg, #36D1DC, ‎#001A57);
+  background-color: #36D1DC;
+  background-color: linear-gradient(#36D1DC, ‎#001A57);
   color: #fff;
   padding: 1rem;
   margin-left: 1rem;
