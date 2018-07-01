@@ -1,0 +1,24 @@
+{
+  "name": "lawcha-2015-theme",
+  "version": "1.0.0",
+  "description": "This is the theme for the Labor and Working-Class History Association's redesign, which I conducted throughout 2014 and 2015 while a PhD Candidate at Duke University, and took live in the Summer of 2015. Our 2015 default theme is clean and designed for clarity. Its simple, straightforward typography is readable on a wide variety of screen sizes. I designed it mobile-first, so that it uses few resources and looks great on any devices.",
+  "main": "index.js",
+  "dependencies": {
+    "less": "^3.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "lessc ./css/main.less ./compressed.css && lessc ./css/seattle-conference.less ./seattle-conference.css && lessc ./css/durham-conference.less ./durham-conference.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baublet/lawcha-2015-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baublet/lawcha-2015-theme/issues"
+  },
+  "homepage": "https://github.com/baublet/lawcha-2015-theme#readme"
+}
