@@ -24,19 +24,6 @@
   padding-top: 1rem;
   overflow: hidden;
 }
-.durham-conference .header:before {
-  display: block;
-  content: " ";
-  position: absolute;
-  bottom: 3%;
-  right: -5%;
-  background: url("images/mt-rainier.svg?bust_the_cache=1239fdsnvkj3nasd") bottom center no-repeat;
-  opacity: .15;
-  background-size: contain;
-  z-index: 9;
-  width: 720px;
-  height: 195px;
-}
 .durham-conference .header:after {
   display: block;
   content: " ";
@@ -46,7 +33,7 @@
   right: 0;
   position: absolute;
   z-index: 10;
-  background: url("images/seatle-skyline-compressor.svg") bottom center repeat-x;
+  background: url("images/durham-skyline.svg") bottom center repeat-x;
 }
 .durham-conference .header .header-nav {
   padding-top: 0;
