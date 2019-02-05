@@ -3,9 +3,11 @@
 @bg-color-1: #36badc;
 @bg-color-2: #2e8dc9;
 
-.durham-conference .header-nav .sub-menu {background:#555;}
+.durham-conference .header-nav .sub-menu {
+  background: #555;
+}
 .durham-conference .header-nav li a {
-  color:fade(#fff, 50%);
+  color: fade(#fff, 50%);
   &:hover {
     color: #fff;
   }
@@ -16,7 +18,9 @@
   background: #fff;
 }
 
-.durham-conference .entry-title {display:none;}
+.durham-conference .entry-title {
+  display: none;
+}
 
 .durham-conference .header {
   width: 100%;
@@ -41,7 +45,7 @@
   .header-nav {
     padding-top: 0;
   }
-  .header-nav #nav-toggle~#nav-toggle-label {
+  .header-nav #nav-toggle ~ #nav-toggle-label {
     background: @bg-color-1;
     border: none;
     box-shadow: inset 0 0 15px 0 fade(#000, 15%);
@@ -55,8 +59,8 @@
     display: none;
   }
   .brand h1 a {
-    opacity: .75;
-    transition: opacity .25s ease-in-out;
+    opacity: 0.75;
+    transition: opacity 0.25s ease-in-out;
     height: 50px;
     width: 162.5px;
     &:hover {
@@ -73,13 +77,14 @@
     padding-bottom: 200px;
     padding-top: 1rem;
     .short-descriptor {
-      font-size: .75rem;
+      font-size: 0.75rem;
       //color: fade(white, 50%);
-      padding: .5rem;
+      padding: 0.5rem;
       display: inline-block;
       margin: 0 auto 0;
       position: relative;
-      &:after, &:before {
+      &:after,
+      &:before {
         content: " ";
         display: block;
         max-height: 1px;
@@ -99,8 +104,7 @@
     .title {
       font-size: 6vw;
       font-weight: 900;
-      text-shadow: 3px 3px 0 @bg-color-1,
-                   5px 7px 0 fade(#000, 25%);
+      text-shadow: 3px 3px 0 @bg-color-1, 5px 7px 0 fade(#000, 25%);
       @media only screen and (max-width: 460px) {
         font-size: 9vw;
       }
@@ -116,35 +120,42 @@
         font-size: 1.75vw;
         text-transform: uppercase;
         font-weight: 100;
-        margin-top: -.25rem;
-        opacity:.8;
+        margin-top: -0.25rem;
+        opacity: 0.8;
         text-shadow: none;
         @media only screen and (max-width: 460px) {
           font-size: 3vw;
         }
       }
     }
-    .date, .location {
+    .date,
+    .location {
       margin-top: 2rem;
       vertical-align: top;
       text-align: left;
-      font-size: .6rem;
-      display:inline-block;
+      font-size: 0.6rem;
+      display: inline-block;
       font-weight: bold;
-      opacity: .75;
+      opacity: 0.75;
     }
     .date {
       margin-right: 1rem;
     }
     .location {
-      .city, .place {
+      .city,
+      .place {
         display: block;
       }
     }
   }
   @media only screen and (max-width: 460px) {
-    .header-nav #nav-toggle:checked~#nav-toggle-label {color:#fff;}
-    .header-nav #nav-toggle:checked~#nav-toggle-label~.menu-new-menu-container {
+    .header-nav #nav-toggle:checked ~ #nav-toggle-label {
+      color: #fff;
+    }
+    .header-nav
+      #nav-toggle:checked
+      ~ #nav-toggle-label
+      ~ .menu-new-menu-container {
       background: @bg-color-1;
       margin: 0 1.25rem;
       box-shadow: 0 2px 5px 0 fade(#000, 15%);
@@ -158,8 +169,7 @@
 .durham-conference-stub .header .conference-info .title {
   font-size: 2rem;
   span {
-    margin-top: .25rem;
-    font-size: .6rem;
+    margin-top: 0.25rem;
   }
 }
 
@@ -168,7 +178,7 @@
   text-align: center;
   margin-bottom: 2rem;
   margin-top: -1rem;
-  .conference-nav-link  {
+  .conference-nav-link {
     font-size: 1rem;
     display: inline-block;
     max-width: 300px;
@@ -176,7 +186,7 @@
     width: 25%;
     position: relative;
     padding-top: 175px;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
     text-decoration: none;
     color: #666;
     vertical-align: top;
@@ -189,12 +199,12 @@
     top: 0;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    left:50%;
+    left: 50%;
     transform: translateX(-50%);
-    opacity: .9;
-    transition: border-radius .5s cubic-bezier(0,.82,0,.99),
-                opacity .5s cubic-bezier(0,.82,0,.99),
-                border-color .25s ease-in-out;
+    opacity: 0.9;
+    transition: border-radius 0.5s cubic-bezier(0, 0.82, 0, 0.99),
+      opacity 0.5s cubic-bezier(0, 0.82, 0, 0.99),
+      border-color 0.25s ease-in-out;
   }
   .conference-nav-link:hover .link-image {
     border-radius: 0;
@@ -203,18 +213,18 @@
     opacity: 1;
     box-shadow: -5px -5px 0 0 @bg-color-1;
     -webkit-filter: grayscale(0%);
-     filter: grayscale(0%);
+    filter: grayscale(0%);
   }
   .link-text {
     font-weight: 900;
     font-size: 1rem;
     text-transform: uppercase;
-    transition: transform 1s cubic-bezier(0,.82,0,.99);
+    transition: transform 1s cubic-bezier(0, 0.82, 0, 0.99);
     .subtitle {
       display: block;
-      opacity: .75;
+      opacity: 0.75;
       font-weight: 100;
-      font-size: .6rem;
+      font-size: 0.6rem;
     }
   }
   .conference-nav-link:hover .link-text {
@@ -222,15 +232,16 @@
     color: #111;
   }
   .conference-nav-link.disabled {
-    opacity: .5;
+    opacity: 0.5;
     cursor: default;
   }
 }
 
 .durham-conference {
-  .entry-content p, .entry-content li {
+  .entry-content p,
+  .entry-content li {
     font-family: @fontfam-longread;
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 0.8rem * 1.6;
   }
 }
@@ -255,9 +266,9 @@
     padding-left: 1rem;
   }
   li {
-    font-size: .7rem;
+    font-size: 0.7rem;
     + li {
-      margin-top: .5rem;
+      margin-top: 0.5rem;
     }
   }
   @media only screen and (max-width: 641px) {
