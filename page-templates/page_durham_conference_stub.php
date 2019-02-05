@@ -8,10 +8,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
   <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/durham-conference.css" media="screen" />
   <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700|Merriweather:400,400italic,700,700italic|Bitter:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -39,20 +39,20 @@
 
       <header id="top" role="banner">
         <div class="brand">
-          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span></a></h1>
-          <h2><?php echo get_bloginfo( 'description', 'display' ); ?></h2>
+          <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><span><?php bloginfo('name'); ?></span></a></h1>
+          <h2><?php echo get_bloginfo('description', 'display'); ?></h2>
         </div>
       </header>
 
       <div class="header-nav">
         <input type="checkbox" id="nav-toggle">
         <label for="nav-toggle" id="nav-toggle-label">Navigation</label>
-        <?php wp_nav_menu( array('main' => 'Primary Menu' )); ?>
+        <?php wp_nav_menu(array('main' => 'Primary Menu' )); ?>
       </div>
 
       <div class="conference-info">
         <h2 class="title">
-          <a href="/durham-conference-2019/">
+          <a href="/annualmeeting/durham-north-carolina-2019/">
             Workers on the Move
             <span> Workers’ Movements</span>
           </a>
@@ -69,7 +69,7 @@
 
     <?php
     // Start the loop.
-    while ( have_posts() ) : the_post();
+    while (have_posts()) : the_post();
 
       // Include the page content template.
       get_template_part('content', 'page');
