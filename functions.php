@@ -271,10 +271,10 @@ function lawcha_wp_footer() {
  * Removes wpautop if the post meta desires it
  */
 function custom_wpautop($content) {
-  if (get_field('wpautop'))
+  if (!get_field('wpautop')) {
     return $content;
-  else
-    return wpautop($content);
+  }
+  return wpautop($content);
 }
 
 remove_filter('the_content', 'wpautop');
