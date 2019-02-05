@@ -8,59 +8,62 @@ if (!function_exists('lawcha_setup')):
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function lawcha_setup() {
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support('automatic-feed-links');
+function lawcha_setup()
+{
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support('automatic-feed-links');
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support('title-tag');
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+    add_theme_support('title-tag');
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	add_theme_support('post-thumbnails', array('post','event'));
-	set_post_thumbnail_size(150, 150, true);
-	
-	add_image_size('large-thumb', 600, 300, true );
-	add_filter('image_size_names_choose', 'lawcha_custom_sizes');
-	function lawcha_custom_sizes( $sizes ) {
-	    return array_merge($sizes, array(
-	        'large-thumb' => 'Large Thumbnail',
-	    ));
-	}
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     *
+     * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+     */
+    add_theme_support('post-thumbnails', array('post','event'));
+    set_post_thumbnail_size(150, 150, true);
+    
+    add_image_size('large-thumb', 600, 300, true);
+    add_filter('image_size_names_choose', 'lawcha_custom_sizes');
+    function lawcha_custom_sizes($sizes)
+    {
+        return array_merge($sizes, array(
+            'large-thumb' => 'Large Thumbnail',
+        ));
+    }
 
-	// This theme uses wp_nav_menu() in two locations.
-	register_nav_menus( array(
-		'main' => 'Primary Menu',
-		'news'  => 'News Categories Menu',
-	) );
+    // This theme uses wp_nav_menu() in two locations.
+    register_nav_menus(array(
+        'main' => 'Primary Menu',
+        'news'  => 'News Categories Menu',
+    ));
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support('html5', array('search-form', 'gallery', 'caption'));
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support('html5', array('search-form', 'gallery', 'caption'));
 
-	/*
-	 * Our custom post types to streamline SO MUCH of the event nonsense
-	 */
-	register_post_type('event',
-	    array(
-	      'labels' => array(
-	        'name' => __('Events'),
-	        'singular_name' => __('Event')
-	      ),
-	      'public' => true,
-	      'has_archive' => true,
-		  'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
-	    )
+    /*
+     * Our custom post types to streamline SO MUCH of the event nonsense
+     */
+    register_post_type(
+        'event',
+        array(
+          'labels' => array(
+            'name' => __('Events'),
+            'singular_name' => __('Event')
+          ),
+          'public' => true,
+          'has_archive' => true,
+          'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
+        )
   );
 }
 add_action('after_setup_theme', 'lawcha_setup');
@@ -142,16 +145,17 @@ if (!function_exists('lawcha_widgets_init')):
  *
  * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function lawcha_widgets_init() {
-	register_sidebar( array(
-		'name'          => 'Footer Widget',
-		'id'            => 'footer-1',
-		'description'   => 'Add widgets here to appear in your footer.',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+function lawcha_widgets_init()
+{
+    register_sidebar(array(
+        'name'          => 'Footer Widget',
+        'id'            => 'footer-1',
+        'description'   => 'Add widgets here to appear in your footer.',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
 }
 add_action('widgets_init', 'lawcha_widgets_init');
 endif;
@@ -161,8 +165,9 @@ if (!function_exists('lawcha_load_scripts')):
  * For loading up custom styles only on pages, not in the admin area
  *
  */
-function lawcha_load_scripts() {
-	wp_enqueue_style('less-compressed', get_template_directory_uri() . '/compressed.css');
+function lawcha_load_scripts()
+{
+    wp_enqueue_style('less-compressed', get_template_directory_uri() . '/compressed.css', [], "20190205");
 }
 add_action('wp_enqueue_scripts', 'lawcha_load_scripts');
 endif;
@@ -179,51 +184,58 @@ endif;
  * @version 2.7
  * @link http://codex.wordpress.org/Function_Reference/in_category#Testing_if_a_post_is_in_a_descendant_category
  */
-if ( ! function_exists( 'post_is_in_descendant_category' ) ) {
-	function post_is_in_descendant_category( $cats, $_post = null ) {
-		foreach ( (array) $cats as $cat ) {
-			// get_term_children() accepts integer ID only
-			$descendants = get_term_children( (int) $cat, 'category' );
-			if ( $descendants && in_category( $descendants, $_post ) )
-				return true;
-		}
-		return false;
-	}
+if (! function_exists('post_is_in_descendant_category')) {
+    function post_is_in_descendant_category($cats, $_post = null)
+    {
+        foreach ((array) $cats as $cat) {
+            // get_term_children() accepts integer ID only
+            $descendants = get_term_children((int) $cat, 'category');
+            if ($descendants && in_category($descendants, $_post)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 /* I hate the default WordPress excerpt junkery. */
-if(!function_exists('lawcha_new_excerpt_more')):
-function lawcha_new_excerpt_more( $more ) {
-	return '';
+if (!function_exists('lawcha_new_excerpt_more')):
+function lawcha_new_excerpt_more($more)
+{
+    return '';
 }
 add_filter('excerpt_more', 'lawcha_new_excerpt_more');
 endif;
 
 /* For various messages and confirmations. */
-function lawcha_msg($atts, $content = null) {
-	extract(shortcode_atts(array(
-		'var' => null,
-		'val' => null
-	), $atts));
-	if($_GET[$var] == $val) return $content;
+function lawcha_msg($atts, $content = null)
+{
+    extract(shortcode_atts(array(
+        'var' => null,
+        'val' => null
+    ), $atts));
+    if ($_GET[$var] == $val) {
+        return $content;
+    }
 }
-add_shortcode( 'msg', 'lawcha_msg' );
+add_shortcode('msg', 'lawcha_msg');
 
 /* Unqueues all the trashy plugin stylesheets and scripts */
-function disable_junk() {
-	/* The Emojis... */
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_action( 'admin_print_styles', 'print_emoji_styles' );
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+function disable_junk()
+{
+    /* The Emojis... */
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    remove_filter('the_content_feed', 'wp_staticize_emoji');
+    remove_filter('comment_text_rss', 'wp_staticize_emoji');
+    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
 
-	wp_dequeue_style('yarppWidgetCss');
-	wp_dequeue_script('jquery');
+    wp_dequeue_style('yarppWidgetCss');
+    wp_dequeue_script('jquery');
 }
-add_action( 'init', 'disable_junk', 99 );
+add_action('init', 'disable_junk', 99);
 
 /**
  * Wrapper for wp_head() which manages SSL
@@ -232,18 +244,19 @@ add_action( 'init', 'disable_junk', 99 );
  * @param	bool	$ssl
  * @return	void
  */
-function lawcha_wp_head() {
-	// Capture wp_head output with buffering
-	ob_start();
-	wp_head();
-	$wp_head = ob_get_contents();
-	ob_end_clean();
+function lawcha_wp_head()
+{
+    // Capture wp_head output with buffering
+    ob_start();
+    wp_head();
+    $wp_head = ob_get_contents();
+    ob_end_clean();
 
-	// Replace plain protocols with relative protocols
-	$wp_head = str_replace("http://", "//", $wp_head);
+    // Replace plain protocols with relative protocols
+    $wp_head = str_replace("http://", "//", $wp_head);
 
-	// Output
-	echo $wp_head;
+    // Output
+    echo $wp_head;
 }
 
 /**
@@ -253,28 +266,30 @@ function lawcha_wp_head() {
  * @param	bool	$ssl
  * @return	void
  */
-function lawcha_wp_footer() {
-	// Capture wp_head output with buffering
-	ob_start();
-	wp_footer();
-	$wp_footer = ob_get_contents();
-	ob_end_clean();
+function lawcha_wp_footer()
+{
+    // Capture wp_head output with buffering
+    ob_start();
+    wp_footer();
+    $wp_footer = ob_get_contents();
+    ob_end_clean();
 
-	// Replace plain protocols with relative protocols
-	$wp_footer = str_replace("http://", "//", $wp_footer);
+    // Replace plain protocols with relative protocols
+    $wp_footer = str_replace("http://", "//", $wp_footer);
 
-	// Output
-	echo $wp_footer;
+    // Output
+    echo $wp_footer;
 }
 
 /**
  * Removes wpautop if the post meta desires it
  */
-function custom_wpautop($content) {
-  if (!get_field('wpautop')) {
-    return $content;
-  }
-  return wpautop($content);
+function custom_wpautop($content)
+{
+    if (!get_field('wpautop')) {
+        return $content;
+    }
+    return wpautop($content);
 }
 
 remove_filter('the_content', 'wpautop');
