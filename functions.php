@@ -286,7 +286,7 @@ function lawcha_wp_footer()
  */
 function custom_wpautop($content)
 {
-    if (!get_field('wpautop')) {
+    if (!get_field('wpautop') && is_page()) {
         return $content;
     }
     return wpautop($content);
