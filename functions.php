@@ -318,19 +318,15 @@ function remove_images_from_old_posts($content)
         return $content;
     }
 
-    if (stristr(get_the_title(), "Stop Kidding Yourself") > -1) {
-        $newContent = preg_replace(
-            "/<p>\[caption.+\[\/caption]<\/p>/U",
-            "",
-            $content
-        );
-        if ($newContent === null) {
-            return $content;
-        }
-        return $newContent;
+    $newContent = preg_replace(
+        "/<p>\[caption.+\[\/caption]<\/p>/U",
+        "",
+        $content
+    );
+    if ($newContent === null) {
+        return $content;
     }
-
-    return $content;
+    return $newContent;
 }
 
 add_filter('the_content', 'remove_images_from_old_posts');
