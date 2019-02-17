@@ -312,7 +312,7 @@ function remove_images_from_old_posts($content)
     }
 
     $content = preg_replace("/<figure id=.*<\/figure>/gmU", "", $content);
-    $content = preg_replace("/<p><\/p>\n/gmU", "", $content);
+    // $content = preg_replace("/<p><\/p>\n/gmU", "", $content);
     return $content;
 }
 
