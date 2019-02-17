@@ -319,7 +319,7 @@ function remove_images_from_old_posts($content)
     }
 
     $newContent = preg_replace(
-        "/<p>\[caption.+\[\/caption]<\/p>/U",
+        "/\<figure.+<\/figure>/U",
         "",
         $content
     );
@@ -329,4 +329,4 @@ function remove_images_from_old_posts($content)
     return $newContent;
 }
 
-add_filter('the_content', 'remove_images_from_old_posts');
+add_filter('the_content', 'remove_images_from_old_posts', 999);
