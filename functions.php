@@ -307,6 +307,14 @@ function is_post_old()
 
     $post = get_post();
     if (strtotime($post->post_date) > strtotime('-2 years')) {
+        return false;
+    }
+    return true;
+}
+
+function remove_images_from_old_post()
+{
+    if (is_post_old() && get_field('ignore_old_image_supressor') !== true) {
         return true;
     }
     return false;
@@ -314,7 +322,7 @@ function is_post_old()
 
 function remove_images_from_old_posts($content)
 {
-    if (!is_post_old()) {
+    if (!remove_images_from_old_post()) {
         return $content;
     }
 
