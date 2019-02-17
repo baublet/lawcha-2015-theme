@@ -312,7 +312,7 @@ function remove_images_from_old_posts($content)
     }
 
     if (stristr(get_the_title(), "Stop Kidding Yourself") > -1) {
-        preg_match('/<p>[caption [^\n]+[\/caption]<\/p>/gU', $content, $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/<p>[caption [^\n]+[\/caption]<\/p>/gU', $content, $matches);
         file_put_contents('logs.txt', print_r($matches, true).PHP_EOL, FILE_APPEND | LOCK_EX);
         // $content = preg_replace(
         //     "/<p>[caption [^\n]+[\/caption]<\/p>/gU",
