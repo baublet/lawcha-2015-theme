@@ -313,17 +313,16 @@ function remove_images_from_old_posts($content)
 
     if (stristr(get_the_title(), "Stop Kidding Yourself") > -1) {
         $newContent = preg_replace(
-            "/<p>\[caption.+\[\/caption]<\/p>/gU",
+            "/<p>\[caption.+\[\/caption]<\/p>/U",
             "",
             $content
         );
         if ($newContent === null) {
-            file_put_contents('logs.txt', preg_last_error().PHP_EOL, FILE_APPEND | LOCK_EX);
             return $content;
         }
         return $newContent;
     }
-    
+
     return $content;
 }
 
