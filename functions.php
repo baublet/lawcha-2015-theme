@@ -312,12 +312,11 @@ function remove_images_from_old_posts($content)
     }
 
     if (stristr(get_the_title(), "Stop Kidding Yourself") > -1) {
-        file_put_contents('logs.txt', $content, FILE_APPEND | LOCK_EX);
-        // $content = preg_replace(
-        //     "/<p>[caption [^\n]+[\/caption]<\/p>/gU",
-        //     "",
-        //     $content
-        // );
+        $content = preg_replace(
+            "/<p>\[caption.+\[\/caption]<\/p>/gU",
+            "",
+            $content
+        );
     }
     return $content;
 }
