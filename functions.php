@@ -319,7 +319,7 @@ function remove_images_from_old_posts($content)
     }
 
     $newContent = preg_replace(
-        "/\<figure.+<\/figure>/U",
+        "/\<figure.+\<\/figure\>/msiU",
         "",
         $content
     );
