@@ -311,9 +311,7 @@ function remove_images_from_old_posts($content)
         return $content;
     }
 
-    file_put_contents('logs.txt', $content.PHP_EOL, FILE_APPEND | LOCK_EX);
-    // $content = preg_replace("/<figure.*<\/figure>/gmU", "", $content);
-    // $content = preg_replace("/<p><\/p>\n/gmU", "", $content);
+    $content = preg_replace("/<p>[caption .*[\/caption]<\/p>/gmU", "", $content);
     return $content;
 }
 
