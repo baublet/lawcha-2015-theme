@@ -311,7 +311,7 @@ function remove_images_from_old_posts($content)
         return $content;
     }
 
-    if (stristr(get_the_post_title(), "Stop Kidding Yourself") > -1) {
+    if (stristr(get_the_title(), "Stop Kidding Yourself") > -1) {
         $content = preg_replace(
             "/<p>[caption [^\n]+[\/caption]<\/p>/gU",
             "",
