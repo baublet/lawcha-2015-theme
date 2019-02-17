@@ -8,14 +8,14 @@
 
 // Setup the post thumbnail
 $thumbnail = 0;
-if(has_post_thumbnail()) {
-  $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-  $thumbnail = $img[1];
+if (has_post_thumbnail()) {
+    $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+    $thumbnail = $img[1];
 }
 
-$otherauthors = get_post_custom_values('OtherAuthor',get_the_ID());
-if(!is_array($otherauthors)) {
-  $otherauthors = false;
+$otherauthors = get_post_custom_values('OtherAuthor', get_the_ID());
+if (!is_array($otherauthors)) {
+    $otherauthors = false;
 }
 
 // Date archive links
@@ -26,7 +26,7 @@ $post_time = get_the_time('U');
  /* If this is a LaborOnline post,
   load the last three posts there,
   excluding this one*/
-if(post_is_in_descendant_category(25)):?>
+if (post_is_in_descendant_category(25)):?>
 <div class="sub-brand labor-online<?=($thumbnail > 599) ? ' banner' : ' nobanner' ?>">
   <div class="sub-brand-image">
     <h3><a href="/wordpress/laboronline/"><span class="screen-reader-text">LABORonline</span></a></h3>
@@ -34,7 +34,7 @@ if(post_is_in_descendant_category(25)):?>
   <div class="previous">
     <?php
     $loopObject = new WP_Query("posts_per_page=3&cat=25&post__not_in[]=".get_the_ID());
-    if ($loopObject->have_posts()): foreach($loopObject->posts as $post):
+    if ($loopObject->have_posts()): foreach ($loopObject->posts as $post):
       $title = ((strlen($post->post_title) > 50) && function_exists('loop_shortcode_title')) ? loop_shortcode_title($post->post_title) : $post->post_title ?>
       <div class="previous-block">
         <a href="<?=get_permalink($post->ID)?>" class="title" title="<?=strip_tags($post->post_title)?>"><?=$title?></a>
@@ -47,39 +47,44 @@ if(post_is_in_descendant_category(25)):?>
 <?php endif; ?>
 
 <article <?php post_class(); ?>>
-  <div class="article-header<?php if($thumbnail > 599) { echo ' banner'; } ?>">
-    <?php if($thumbnail > 599) { ?>
+  <div class="article-header<?php if ($thumbnail > 599 && !is_post_old()) {
+          echo ' banner';
+      } ?>">
+    <?php if ($thumbnail > 599 && !is_post_old()) {
+          ?>
       <div class="banner-wrapper">
         <?php
-          $topmargin = get_post_meta(get_the_ID(),'up-down', true);
-          $leftmargin = get_post_meta(get_the_ID(),'left-right', true);
+          $topmargin = get_post_meta(get_the_ID(), 'up-down', true);
+          $leftmargin = get_post_meta(get_the_ID(), 'left-right', true);
           $attr = array(
             'style' => "margin-top:{$topmargin};margin-left:{$leftmargin};"
           );
-          the_post_thumbnail('full', $attr);
-        ?>
+          the_post_thumbnail('full', $attr); ?>
       </div>
-    <?php } ?>
+    <?php
+      } ?>
     <div class="categories"><?php the_category(' '); ?></div>
     <h2 class="article-title">
       <?php
         $title = get_the_title();
-        if(function_exists('loop_shortcode_title')) {
-          echo loop_shortcode_title($title);
-          echo loop_shortcode_subtitle(
+        if (function_exists('loop_shortcode_title')) {
+            echo loop_shortcode_title($title);
+            echo loop_shortcode_subtitle(
             $title,
-            '<span class="subtitle">'
-            ,'</span>'
+            '<span class="subtitle">',
+              '</span>'
           );
         } else {
-          echo $title;
+            echo $title;
         }
       ?>
     </h2>
     <div class="author">
       by <span class="name"><?php the_author_posts_link(); ?></span><?php
-        if($otherauthors) {
-          foreach($otherauthors as $key => $author_id) { ?>, <span class="name"><a rel="author" href="<?=get_author_posts_url($author_id)?>" title="Posts by <?=get_the_author_meta('display_name',$author_id)?>"><?=get_the_author_meta('display_name',$author_id)?></a></span><?php }
+        if ($otherauthors) {
+            foreach ($otherauthors as $key => $author_id) {
+                ?>, <span class="name"><a rel="author" href="<?=get_author_posts_url($author_id)?>" title="Posts by <?=get_the_author_meta('display_name', $author_id)?>"><?=get_the_author_meta('display_name', $author_id)?></a></span><?php
+            }
         }
       ?>
       on <span class="date">
@@ -91,7 +96,7 @@ if(post_is_in_descendant_category(25)):?>
 
   <div class="entry-content">
     <?php /* Our custom verbiage for our Working-Class Perspectives cross-posts */
-    if(has_tag("working-class-perspectives")): ?>
+    if (has_tag("working-class-perspectives")): ?>
       <aside class="alignright repost">
         <em>This post was originally featured in
         </em><strong><a href="https://workingclassstudies.wordpress.com/">Working-Class
@@ -103,25 +108,25 @@ if(post_is_in_descendant_category(25)):?>
     <?php endif; ?>
 
     <?php
-      if(!get_post_meta(get_the_ID(), 'hide_author_boxes', true) && get_the_author_meta('ID') != 435) {
-        set_query_var('author_id', get_the_author_meta('ID'));
-        get_template_part('post', 'authorbox');
-        if($otherauthors) {
-          foreach($otherauthors as $key => $author_id) {
-            set_query_var('author_id', $author_id);
-            get_template_part('post', 'authorbox');
+      if (!get_post_meta(get_the_ID(), 'hide_author_boxes', true) && get_the_author_meta('ID') != 435) {
+          set_query_var('author_id', get_the_author_meta('ID'));
+          get_template_part('post', 'authorbox');
+          if ($otherauthors) {
+              foreach ($otherauthors as $key => $author_id) {
+                  set_query_var('author_id', $author_id);
+                  get_template_part('post', 'authorbox');
+              }
           }
-        }
       }
 
       the_content();
 
-      wp_link_pages( array(
-        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+      wp_link_pages(array(
+        'before'      => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'twentyfourteen') . '</span>',
         'after'       => '</div>',
         'link_before' => '<span>',
         'link_after'  => '</span>',
-      ) );
+      ));
     ?>
   </div><!-- .entry-content -->
 

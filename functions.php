@@ -299,15 +299,22 @@ add_filter('the_content', 'custom_wpautop');
 /**
  * Removes images from old posts to protect against copyright trolls
  */
-function remove_images_from_old_posts($content)
+function is_post_old()
 {
     if (get_post_type() !== 'post') {
-        return $content;
+        return false;
     }
 
     $post = get_post();
-
     if (strtotime($post->post_date) > strtotime('-2 years')) {
+        return true;
+    }
+    return false;
+}
+
+function remove_images_from_old_posts($content)
+{
+    if (!is_post_old()) {
         return $content;
     }
 
