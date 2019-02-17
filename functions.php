@@ -311,7 +311,7 @@ function remove_images_from_old_posts($content)
         return $content;
     }
 
-    $content = preg_replace("/<p>[caption .*[\/caption]<\/p>/gmU", "", $content);
+    $content = preg_replace("/<p>[caption .*[\/caption]<\/p>/gU", "", $content);
     return $content;
 }
 
