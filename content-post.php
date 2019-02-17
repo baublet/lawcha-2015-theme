@@ -47,10 +47,10 @@ if (post_is_in_descendant_category(25)):?>
 <?php endif; ?>
 
 <article <?php post_class(); ?>>
-  <div class="article-header<?php if ($thumbnail > 599 && !is_post_old()) {
+  <div class="article-header<?php if ($thumbnail > 599) {
           echo ' banner';
       } ?>">
-    <?php if ($thumbnail > 599 && !is_post_old()) {
+    <?php if ($thumbnail > 599) {
           ?>
       <div class="banner-wrapper">
         <?php
