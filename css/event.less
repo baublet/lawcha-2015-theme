@@ -1,87 +1,85 @@
 // main: main.less
 
 article.event {
-	.banner {
-		padding:.5rem;
-		background-size:cover;
-		position:relative;
-		margin-bottom:2rem;
-		.box-shadow-inset(0, 0, 30px, 0, rgba(0, 0, 0, .85));
-		.details {
-			border:0;
-			position:absolute;
-			bottom:0;
-			color:#fefefe;
-			.event-title {
-				text-shadow:-1px -1px 0 #000,  
-						    1px -1px 0 #000,
-						    -1px 1px 0 #000,
-						    1px 1px 0 #000,
-							0 0 15px #000;
-				border:0;
-			}
-			.event-details {
-				background:rgba(0,0,0,.75);
-				padding:.5rem;
-				display:inline-block;
-				text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.75);
-			}
-		}
-	}
-	.details {
-		border-bottom:1px solid #eee;
-		margin-bottom:1rem;
-	}
-	.lawcha {
-		&:before {
-			content:"Official LAWCHA Event";
-			background:@color-main-highlight;
-			padding:.5rem;
-			margin:0 0 1rem;
-			font-family:@fontfam-legibility;
-			font-size:.8rem;
-			font-weight:800;
-			color:#fefefe;
-			display:block;
-			border-radius:3px;
-			.box-shadow(0, 0, 5px, 0, rgba(50, 50, 50, 0.5));
-			@media only screen and (min-width: 600px) {
-				float:right;
-				margin:0 0 1rem 1rem;
-			}
-		}
-	}
-	.event-details {
-		margin:1rem 0;
-		.when, .where{
-			font-size:.7rem;
-			padding:0 .5rem;
-			&:before {
-				display:inline-block;
-				width:3rem;
-				font-weight:bold;
-				content: "WHEN: ";
-				opacity:.75;
-			}
-		}
-		.where:before {
-			content: "WHERE: ";
-		}
-	}
-	.event-title {
-		font-family:@fontfam-banner;
-		font-weight:normal;
-		font-size:3rem;
-		.subtitle {
-			font-size:1.5rem;
-			font-family:@fontfam-legibility;
-			font-weight:100;
-		}
-	}
-	.banner-wrapper {
-		img {
-			width:100%;
-			height:auto;
-		}
-	}
+  .banner {
+    padding: 0.5rem;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 2rem;
+    .box-shadow-inset(0, 0, 30px, 0, rgba(0, 0, 0, 0.85));
+    .details {
+      border: 0;
+      position: absolute;
+      bottom: 0;
+      color: #fefefe;
+      .event-title {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000, 0 0 15px #000;
+        border: 0;
+      }
+      .event-details {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 0.5rem;
+        display: inline-block;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+  .details {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+  }
+  .lawcha {
+    &:before {
+      content: "Official LAWCHA Event";
+      background: @color-main-highlight;
+      padding: 0.5rem;
+      margin: 0 0 1rem;
+      font-family: @fontfam-legibility;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #fefefe;
+      display: block;
+      border-radius: 3px;
+      .box-shadow(0, 0, 5px, 0, rgba(50, 50, 50, 0.5));
+      @media only screen and (min-width: 600px) {
+        float: right;
+        margin: 0 0 1rem 1rem;
+      }
+    }
+  }
+  .event-details {
+    margin: 1rem 0;
+    .when,
+    .where {
+      font-size: 0.7rem;
+      padding: 0 0.5rem;
+      &:before {
+        display: inline-block;
+        width: 3rem;
+        font-weight: bold;
+        content: "WHEN: ";
+        opacity: 0.75;
+      }
+    }
+    .where:before {
+      content: "WHERE: ";
+    }
+  }
+  .event-title {
+    font-family: @fontfam-banner;
+    font-weight: normal;
+    font-size: 3rem;
+    .subtitle {
+      font-size: 1.5rem;
+      font-family: @fontfam-legibility;
+      font-weight: 100;
+    }
+  }
+  .banner-wrapper {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

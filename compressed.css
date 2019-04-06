@@ -1186,6 +1186,9 @@ hr {
   color: #fff;
   text-decoration: underline;
 }
+.site-main .entry-content aside.repost-global {
+  background: green;
+}
 /*	Typography for long-form content
   =========================================================================
   =========================================================================
@@ -1393,11 +1396,7 @@ hr {
   }
   .header-nav .menu-new-menu-container ul,
   .header-nav .menu-new-menu-container .menu-item .sub-menu,
-  .header-nav
-    .menu-new-menu-container
-    .menu-item-6356
-    .menu-item-has-children
-    .sub-menu {
+  .header-nav .menu-new-menu-container .menu-item-6356 .menu-item-has-children .sub-menu {
     display: block;
     position: static;
     width: auto;
@@ -1407,12 +1406,7 @@ hr {
   }
   .header-nav .menu-new-menu-container ul li,
   .header-nav .menu-new-menu-container .menu-item .sub-menu li,
-  .header-nav
-    .menu-new-menu-container
-    .menu-item-6356
-    .menu-item-has-children
-    .sub-menu
-    li {
+  .header-nav .menu-new-menu-container .menu-item-6356 .menu-item-has-children .sub-menu li {
     display: block;
     position: static;
     border-bottom: none;
@@ -1420,25 +1414,13 @@ hr {
   }
   .header-nav .menu-new-menu-container ul li a,
   .header-nav .menu-new-menu-container .menu-item .sub-menu li a,
-  .header-nav
-    .menu-new-menu-container
-    .menu-item-6356
-    .menu-item-has-children
-    .sub-menu
-    li
-    a {
+  .header-nav .menu-new-menu-container .menu-item-6356 .menu-item-has-children .sub-menu li a {
     background: transparent;
     color: #333;
   }
   .header-nav .menu-new-menu-container ul li a:hover,
   .header-nav .menu-new-menu-container .menu-item .sub-menu li a:hover,
-  .header-nav
-    .menu-new-menu-container
-    .menu-item-6356
-    .menu-item-has-children
-    .sub-menu
-    li
-    a:hover {
+  .header-nav .menu-new-menu-container .menu-item-6356 .menu-item-has-children .sub-menu li a:hover {
     background: transparent;
     color: #800f25;
     text-decoration: underline;
@@ -1466,10 +1448,7 @@ hr {
   .header-nav #nav-toggle:checked ~ #nav-toggle-label {
     color: #111;
   }
-  .header-nav
-    #nav-toggle:checked
-    ~ #nav-toggle-label
-    ~ .menu-new-menu-container {
+  .header-nav #nav-toggle:checked ~ #nav-toggle-label ~ .menu-new-menu-container {
     display: block;
   }
   .header-nav #nav-toggle:checked ~ #nav-toggle-label:before {
@@ -2969,11 +2948,7 @@ input[type="submit"] {
   margin: 0;
   padding: 0;
 }
-.type.site-main
-  .entry-content
-  .list-filters-viewport
-  ul
-  input[type="checkbox"] {
+.type.site-main .entry-content .list-filters-viewport ul input[type="checkbox"] {
   display: none;
 }
 .type.site-main .entry-content .list-filters-viewport ul label {
@@ -2984,23 +2959,13 @@ input[type="submit"] {
 .type.site-main .entry-content .list-filters-viewport ul label:hover {
   background: #eee;
 }
-.type.site-main
-  .entry-content
-  .list-filters-viewport
-  ul
-  input[type="checkbox"]:checked
-  + label {
+.type.site-main .entry-content .list-filters-viewport ul input[type="checkbox"]:checked + label {
   font-weight: bold;
   background: #333;
   padding-left: 0.25rem;
   color: #eee;
 }
-.type.site-main
-  .entry-content
-  .list-filters-viewport
-  ul
-  input[type="checkbox"]:checked
-  + label:before {
+.type.site-main .entry-content .list-filters-viewport ul input[type="checkbox"]:checked + label:before {
   content: "\2714";
   margin-right: 0.25rem;
 }
@@ -3102,8 +3067,7 @@ article.event .banner .details {
   color: #fefefe;
 }
 article.event .banner .details .event-title {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000, 0 0 15px #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px #000;
   border: 0;
 }
 article.event .banner .details .event-details {
@@ -3220,11 +3184,7 @@ article.event .banner-wrapper img {
   padding: 1px;
   border: 1px solid #eee;
 }
-.features-box
-  .old-features
-  .laboronline-old-feature
-  .laboronline-thumb:hover
-  img {
+.features-box .old-features .laboronline-old-feature .laboronline-thumb:hover img {
   border-color: #333;
 }
 .features-box .old-features .laboronline-old-feature .date {
@@ -3265,10 +3225,7 @@ article.event .banner-wrapper img {
 .features-box .old-features .laboronline-old-feature:hover .author {
   opacity: 1;
 }
-.features-box
-  .old-features
-  .laboronline-old-feature
-  + .laboronline-old-feature {
+.features-box .old-features .laboronline-old-feature + .laboronline-old-feature {
   border-top: 1px solid #eee;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -3792,10 +3749,7 @@ article.event .banner-wrapper img {
 @font-face {
   font-family: "icomoon";
   src: url("css/fonts/icomoon.eot?-78y50l");
-  src: url("css/fonts/icomoon.eot?#iefix-78y50l") format("embedded-opentype"),
-    url("css/fonts/icomoon.ttf?-78y50l") format("truetype"),
-    url("css/fonts/icomoon.woff?-78y50l") format("woff"),
-    url("css/fonts/icomoon.svg?-78y50l#icomoon") format("svg");
+  src: url("css/fonts/icomoon.eot?#iefix-78y50l") format("embedded-opentype"), url("css/fonts/icomoon.ttf?-78y50l") format("truetype"), url("css/fonts/icomoon.woff?-78y50l") format("woff"), url("css/fonts/icomoon.svg?-78y50l#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }

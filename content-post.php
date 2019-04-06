@@ -107,6 +107,15 @@ if (post_is_in_descendant_category(25)):?>
       </aside>
     <?php endif; ?>
 
+    <?php /* Our custom verbiage for our Working-Class Perspectives cross-posts */
+    if (has_tag("global-affairs")): ?>
+      <aside class="alignright repost repost-global">
+        <em>This post was originally featured in LAWCHA's
+        </em><strong><a href="https://workingclassstudies.wordpress.com/">Global
+        Affairs Committee</a></strong><em>.</em>
+      </aside>
+    <?php endif; ?>
+
     <?php
       if (!get_post_meta(get_the_ID(), 'hide_author_boxes', true) && get_the_author_meta('ID') != 435) {
           set_query_var('author_id', get_the_author_meta('ID'));
