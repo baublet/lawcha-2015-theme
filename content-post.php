@@ -111,7 +111,7 @@ if (post_is_in_descendant_category(25)):?>
     if (has_tag("global-affairs")): ?>
       <aside class="alignright repost repost-global">
         <em>This post was originally featured in LAWCHA's
-        </em><strong><a href="https://workingclassstudies.wordpress.com/">Global
+        </em><strong><a href="/committee-portal/global-affairs-committee/">Global
         Affairs Committee</a></strong><em>.</em>
       </aside>
     <?php endif; ?>
