@@ -3755,7 +3755,8 @@ article.event .banner-wrapper img {
 }
 [class^="icon-"],
 [class*=" icon-"] {
-  font-family: "icomoon";
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -3820,19 +3821,19 @@ article.event .banner-wrapper img {
 .icon-share2:before {
   content: "\ea82";
 }
-.icon-google-plus:before {
+.icon-google-plus2:before {
   content: "\ea89";
 }
-.icon-facebook:before {
+.icon-facebook2:before {
   content: "\ea8d";
 }
-.icon-twitter2:before {
+.icon-twitter:before {
   content: "\ea91";
 }
-.icon-twitter:before {
+.icon-twitter2:before {
   content: "\ea92";
 }
-.icon-feed:before {
+.icon-feed3:before {
   content: "\ea95";
 }
 .icon-wordpress:before {
@@ -3844,7 +3845,7 @@ article.event .banner-wrapper img {
 .icon-linkedin:before {
   content: "\eac8";
 }
-.icon-pinterest:before {
+.icon-pinterest2:before {
   content: "\ead1";
 }
 .icon-file-pdf:before {
@@ -3876,4 +3877,7 @@ article.event .banner-wrapper img {
 }
 .icon-star-full:before {
   content: "\e9d9";
+}
+.icon-earth:before {
+  content: "\e9ca";
 }
