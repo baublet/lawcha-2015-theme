@@ -15,7 +15,7 @@ remove_filter('the_content', 'wpautop'); ?>
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
-  <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/chicago-conference.css?4" media="screen" />
+  <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/chicago-conference.css?6" media="screen" />
   <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700|Merriweather:400,400italic,700,700italic|Bitter:400,400italic,700' rel='stylesheet' type='text/css'>
 
 <script>
@@ -56,14 +56,14 @@ remove_filter('the_content', 'wpautop'); ?>
         <div class="short-descriptor">2021 LAWCHA Conference</div>
         <h2 class="title">
           <a href="http://www.lawcha.org/annualmeeting/chicago-illinois-2021/">
-            Chicago
-            <span>Illinois</span>
+            Workers on the Front Lines
+            <span>2021 LAWCHA Conference</span>
           </a>
         </h2>
         <div class="date">2021</div>
         <div class="location">
           <span class="city">Chicago, Illinois</span>
-          <!--<span class="place">University of Washington</span>-->
+          <span class="place">University of Illinois</span>
         </div>
       </div>
 

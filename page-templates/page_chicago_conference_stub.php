@@ -53,8 +53,8 @@
       <div class="conference-info">
         <h2 class="title">
           <a href="/annualmeeting/chicago-illinois-2021/">
-            Chicago
-            <span>Illinois</span>
+            Workers on the Front Lines
+            <span>University of Illinois, Chicago</span>
           </a>
         </h2>
       </div>
