@@ -21,6 +21,6 @@ $thefile = array_rand($images);
 $imginfo = getimagesize($images[$thefile]);
 header("Cache-Control: private, max-age=10800, pre-check=10800");
 header("Pragma: private");
-header("Expires: " . date(DATE_RFC822,strtotime("7 days")));
+header("Expires: " . date(DATE_RFC822,strtotime("3 days")));
 header("Content-type: {$imginfo['mime']}");
 readfile($images[$thefile]);
