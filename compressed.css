@@ -1189,6 +1189,12 @@ hr {
 .site-main .entry-content aside.repost-global {
   background: green;
 }
+.post-password-form input[type="password"] {
+  display: block;
+  margin: 1em 0;
+  font-size: 2em;
+  padding: 0.75em 1em;
+}
 /*	Typography for long-form content
   =========================================================================
   =========================================================================
