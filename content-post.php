@@ -107,6 +107,16 @@ if (post_is_in_descendant_category(25)):?>
       </aside>
     <?php endif; ?>
 
+    <?php /* Our custom verbiage for our Public History posts */
+    if (has_tag("marked-unmarked-remembered")): ?>
+      <aside class="alignright repost" style="background: #800f25">
+        <strong style="display:block;font-size: 1.05em">Marked, Unmarked, Remembered</strong>
+        <br/>
+        A Labor Online public history series curated by Alex Lichtenstein, Indiana University.
+        <br/><br/>Contact him at <a style="text-decoration:underline" href="mailto:lichtens@indiana.edu">lichtens@indiana.edu</a> to contribute or make suggestions.
+      </aside>
+    <?php endif; ?>
+
     <?php /* Our custom verbiage for our Working-Class Perspectives cross-posts */
     if (has_tag("global-affairs")): ?>
       <aside class="alignright repost repost-global">
