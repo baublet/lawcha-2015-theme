@@ -2856,43 +2856,6 @@ input[type="submit"] {
   line-height: 2rem;
   vertical-align: bottom;
 }
-.member-list {
-  width: 100%;
-  font-size: 0.7rem;
-}
-.member-list th,
-.member-list td {
-  vertical-align: top;
-  padding: 0.25rem;
-  margin: 0;
-  cell-spacing: 0;
-}
-.member-list th {
-  text-align: left;
-  font-size: 0.9rem;
-}
-.member-list td {
-  border-bottom: 1px solid #eee;
-}
-.member-list tr:hover td {
-  background: rgba(0, 0, 0, 0.1);
-}
-.member-list tr:nth-child(2n + 3) {
-  background: #f3f3f3;
-}
-.member-list tr:nth-child(n + 1) td:nth-child(1) {
-  font-weight: bold;
-  font-size: 0.5rem;
-  text-align: center;
-}
-.member-list tr:nth-child(n + 1) td:nth-child(3) {
-  font-style: italic;
-}
-.member-list tr:nth-child(n + 1) td:nth-child(5),
-.member-list tr:nth-child(n + 1) td:nth-child(6) {
-  text-align: center;
-  font-size: 0.6rem;
-}
 .filter-buttons {
   overflow: auto;
 }
@@ -3317,7 +3280,7 @@ article.event .banner-wrapper img {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 .authors-box .authors .an-author-box .author {
   display: block;
@@ -3326,6 +3289,7 @@ article.event .banner-wrapper img {
   padding: 0;
 }
 .authors-box .authors .an-author-box .author img {
+  display: block;
   opacity: 0.75;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);

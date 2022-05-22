@@ -1,0 +1,29 @@
+.toast {
+  border: 1px solid rgba(0, 0, 0, .25);
+  padding: 8px;
+  border-radius: 5px;
+  font-family: @fontfam-legibility;
+  font-size: 14px;
+  background: rgba(0,0,0,.02);
+}
+
+.toast + .toast {
+  margin-top: 12px;
+}
+
+.toast.error {
+  border-color: @color-main-highlight;
+  background-color: lighten(@color-main-highlight, 15%);
+  color: white;
+}
+
+.toast.success {
+  border-color: darkgreen;
+  background-color: lighten(darkgreen, 10%);
+  color: white;
+}
+
+.toast.warn {
+  border-color: darken(yellow, 15%);
+  background-color: lighten(yellow, 20%);
+}
