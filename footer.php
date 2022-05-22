@@ -33,5 +33,25 @@
 
 <?php lawcha_wp_footer(); ?>
 
+<script>
+    var masonries = document.querySelectorAll('.grid');
+		console.log({ masonries })
+    Array.from(masonries).forEach(element => {
+      var optionsString = element.getAttribute("data-masonry");
+			var options = optionsString ? JSON.parse(optionsString) : {};
+			var optionsWithDefaults = Object.assign({
+				itemSelector: '.grid-item',
+				columnWidth: 100,
+				gutter: 8,
+				fitWidth: true,
+				resize: true,
+				transitionDuration: '0.2s'
+			},
+				options
+			);
+      window.fk2 = new Masonry(element, optionsWithDefaults);
+    });
+</script>
+
 </body>
 </html>

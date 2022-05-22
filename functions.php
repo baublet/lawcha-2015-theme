@@ -167,7 +167,8 @@ if (!function_exists('lawcha_load_scripts')):
  */
 function lawcha_load_scripts()
 {
-    wp_enqueue_style('less-compressed', get_template_directory_uri() . '/compressed.css', [], "2021052000");
+    $date = new DateTime();
+    wp_enqueue_style('less-compressed', get_template_directory_uri() . '/compressed.css', [], $date->format("U"));
 }
 add_action('wp_enqueue_scripts', 'lawcha_load_scripts');
 endif;
@@ -338,3 +339,4 @@ function remove_images_from_old_posts($content)
 }
 
 add_filter('the_content', 'remove_images_from_old_posts', 999);
+wp_enqueue_script('masonry', '//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js', array(), '1.0.0', true );

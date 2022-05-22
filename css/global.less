@@ -19,7 +19,6 @@ body {
   color: #333;
   font-family: @fontfam-legibility;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 a {
   color: @color-main-highlight;
@@ -630,7 +629,8 @@ hr {
   p {
     font-size: 0.6rem;
   }
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"] {
     margin-bottom: 0.25rem;
   }
   .button-container {

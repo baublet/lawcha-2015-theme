@@ -390,7 +390,6 @@ body {
   color: #333;
   font-family: "Open Sans", "Trebuchet MS", sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 a {
   color: #800f25;
@@ -1045,7 +1044,8 @@ hr {
 .newsletter-signup p {
   font-size: 0.6rem;
 }
-.newsletter-signup input[type="text"] {
+.newsletter-signup input[type="text"],
+.newsletter-signup input[type="email"] {
   margin-bottom: 0.25rem;
 }
 .newsletter-signup .button-container {
@@ -1468,6 +1468,7 @@ hr {
 form {
   font-size: 0.75rem;
 }
+form input[type="email"],
 form input[type="text"],
 form select,
 form textarea {
@@ -1478,14 +1479,17 @@ form textarea {
   border: 1px solid #ccc;
   outline: none;
 }
+form input[type="email"]:hover,
 form input[type="text"]:hover,
 form select:hover,
 form textarea:hover {
   border: 1px solid #777;
 }
+form input[type="email"]:active,
 form input[type="text"]:active,
 form select:active,
 form textarea:active,
+form input[type="email"]:focus,
 form input[type="text"]:focus,
 form select:focus,
 form textarea:focus {
@@ -2871,8 +2875,7 @@ input[type="submit"] {
   border-bottom: 1px solid #eee;
 }
 .member-list tr:hover td {
-  background: #333;
-  color: #eee;
+  background: rgba(0, 0, 0, 0.1);
 }
 .member-list tr:nth-child(2n + 3) {
   background: #f3f3f3;
@@ -3742,6 +3745,31 @@ article.event .banner-wrapper img {
     margin-bottom: 2rem;
     padding: 1rem;
   }
+}
+.toast {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 8px;
+  border-radius: 5px;
+  font-family: "Open Sans", "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.02);
+}
+.toast + .toast {
+  margin-top: 12px;
+}
+.toast.error {
+  border-color: #800f25;
+  background-color: #c41739;
+  color: white;
+}
+.toast.success {
+  border-color: darkgreen;
+  background-color: #009700;
+  color: white;
+}
+.toast.warn {
+  border-color: #b2b300;
+  background-color: #ffff66;
 }
 .icon-feed {
   color: #ff6600;
