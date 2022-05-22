@@ -3280,7 +3280,7 @@ article.event .banner-wrapper img {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
-  margin-bottom: 1px;
+  margin-bottom: 3px;
 }
 .authors-box .authors .an-author-box .author {
   display: block;
