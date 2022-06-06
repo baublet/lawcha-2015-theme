@@ -13,11 +13,11 @@
 	}	
 
 /* Email addresses to send this information to */
-$sendto = 'nancy.maclean@duke.edu,lawcha@duke.edu';
+$sendto = 'lawcha@duke.edu,lawcha.office@gmail.com';
 /* Subject line of the email message */
 $subject = '[LAWCHA] New Member Information';
 /* Email address to set as the "from" info */
-$from = 'lawcha@duke.edu';
+$from = 'lawcha.office@gmail.com';
 
 
 if($_REQUEST['submitinfo']=='Submit') {
@@ -50,7 +50,7 @@ if($_REQUEST['submitinfo']=='Submit') {
 		$headers = 	'From: ' . $from . "\r\n" .
 					'Reply-To: ' . $from . "\r\n" .
 					'X-Mailer: PHP/' . phpversion();
-		mail($sendto, $subject, $message, $headers);
+		wp_mail($sendto, $subject, $message, $headers);
 		
 		// Process the contents to be CSV safe
 		$row = array($thename, $contact, $affiliation, $position, $info, $interests, $interests_other, $how_hear, $expectations, date("Y-m-d"));

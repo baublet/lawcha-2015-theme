@@ -15,7 +15,7 @@
  <article <?php post_class($newclasses); ?>>
 	<?php if(has_post_thumbnail()): ?>
 		<div class="thumb-box">
-			<a href="<?=get_permalink()?>"><?php the_post_thumbnail('thumbnail', $attr); ?></a>
+			<a href="<?=get_permalink()?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 		</div>
 	<?php endif; ?>
 	<h2><a href="<?=get_permalink()?>"><?=the_title()?></a></h2>

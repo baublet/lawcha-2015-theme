@@ -247,6 +247,7 @@ add_action('init', 'disable_junk', 99);
  */
 function lawcha_wp_head()
 {
+    wp_enqueue_script('masonry', '//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js', array(), '1.0.0', true );
     // Capture wp_head output with buffering
     ob_start();
     wp_head();
@@ -339,4 +340,3 @@ function remove_images_from_old_posts($content)
 }
 
 add_filter('the_content', 'remove_images_from_old_posts', 999);
-wp_enqueue_script('masonry', '//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js', array(), '1.0.0', true );
