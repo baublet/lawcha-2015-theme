@@ -3256,55 +3256,6 @@ article.event .banner-wrapper img {
 .post-preview .excerpt {
   font-size: 0.7rem;
 }
-@media only screen and (min-width: 750px) {
-  .recent-box {
-    margin-right: 281px;
-    padding-right: 1rem;
-  }
-}
-.retention-box {
-  overflow: auto;
-}
-@media only screen and (min-width: 750px) {
-  .retention-box {
-    float: right;
-    width: 253px;
-    padding: 0 0 1rem 1rem;
-    border-left: 1px solid #eee;
-  }
-}
-.retention-box > div {
-  margin-bottom: 2rem;
-}
-.authors-box .authors .an-author-box {
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  margin-bottom: 3px;
-}
-.authors-box .authors .an-author-box .author {
-  display: block;
-  width: 64px;
-  margin: 0;
-  padding: 0;
-}
-.authors-box .authors .an-author-box .author img {
-  display: block;
-  opacity: 0.75;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  width: 100%;
-  height: auto;
-  transition: all 0.15s ease-in-out;
-}
-.authors-box .authors .an-author-box .author:hover img {
-  opacity: 1;
-  filter: grayscale(0);
-  -webkit-filter: grayscale(0);
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
-}
 .popular {
   padding-top: 1rem;
   margin-top: 1rem;

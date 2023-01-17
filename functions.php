@@ -168,7 +168,7 @@ if (!function_exists('lawcha_load_scripts')):
 function lawcha_load_scripts()
 {
     $date = new DateTime();
-    wp_enqueue_style('less-compressed', get_template_directory_uri() . '/compressed.css', [], "2022-05-22-01");
+    wp_enqueue_style('less-compressed', get_template_directory_uri() . '/compressed.css', [], "2022-08-25-01");
 }
 add_action('wp_enqueue_scripts', 'lawcha_load_scripts');
 endif;
